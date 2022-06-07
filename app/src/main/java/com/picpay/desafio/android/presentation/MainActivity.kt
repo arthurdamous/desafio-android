@@ -79,7 +79,13 @@ class MainActivity : ComponentActivity() {
                                 ) {
                                     items(state.users.size) { i ->
                                         val user = state.users[i]
+                                        if (i > 0) {
+                                            Spacer(modifier = Modifier.height(8.dp))
+                                        }
                                         UserItem(user)
+                                        if (i < state.users.size - 1){
+                                            Divider()
+                                        }
                                     }
                                 }
                             }
